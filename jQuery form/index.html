@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <!-- font -->
+    <link rel="stylesheet" href="assets/css/font.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- favicon -->
+    <link rel="icon" href="assets/img/log-in.png">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- form start -->
+
+    <section>
+        <div class="container">
+            <!-- button start -->
+            <div class="button d-flex justify-evenly">
+                <div class="btn">
+                    <button id="hide">HIDE</button>
+                </div>
+                <div class="btn">
+                    <button id="show">SHOW</button>
+                </div>
+            </div>
+            <!-- button end -->
+            <div class="row">
+
+                <div class="main">
+                    <h1>Log in</h1>
+                    <input type="email" placeholder="Your Email">
+                    <input type="password" placeholder="Your password">
+
+                    <button id="submit">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- form end -->
+
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $(".main").hide(1000);
+            });
+
+            $("#show").click(function () {
+                $(".main").show(1000);
+            });
+
+            $("#submit").dblclick(function () {
+                alert("Your Form is Successfully Submited...! Thank you..!");
+            });
+
+            $("input").keydown(function () {
+                $(this).css("background-color", "#FFF");
+            });
+
+            $("input").keyup(function () {
+                $(this).css("background-color", "skyblue");
+            });
+
+            $("input").keypress(function () {
+                $(this).css("background-color", "#0474b1");
+            });
+
+            $("#submit").mouseenter(function () {
+                $(this).css("background-color", "rgb(0,212,255)")
+            });
+
+            $("#submit").mouseleave(function () {
+                $(this).css("background-color", "#FFF")
+            });
+        });
+
+    </script>
+</body>
+
+</html>

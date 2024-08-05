@@ -1,0 +1,134 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-right: -12px;
+}
+
+.d-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.justify-evenly {
+	justify-content: space-evenly;
+}
+
+
+/* button start */
+.btn button{
+	width:160px;
+	height:50px;
+	margin:20px 0;
+	font-size:20px;
+	border:none;
+	border-radius:30px;
+    background-image: url('../img/btn-bg.webp');
+	position:relative;
+	overflow:hidden;
+    color:skyblue;
+	z-index:1;
+	transition:0.5s;
+}
+.btn button:hover{
+	transform:skew(18deg);
+    color: #FFF;
+}
+.btn button::after{
+	position:absolute;
+	content:'';
+	width:20px;
+	height:20px;
+	border:5px solid #FFF;
+	background-color:purple;
+	border-radius:30px;
+	left:0;
+	top:0;
+	z-index:-1;
+	transition:0.5s;
+}
+.btn button:hover::after{
+	width:50%;
+	height:80%;
+	border:0 #FFF;
+	border-radius:30px 30px 0 30px;
+}
+.btn button::before{
+	position:absolute;
+	content:'';
+	width:20px;
+	height:20px;
+	border:5px solid #FFF;
+	background-color:blue;
+	border-radius:30px;
+	right:0;
+	bottom:0;
+	z-index:-1;
+	transition:0.5s;
+}
+.btn button:hover::before{
+	width:50%;
+	height:80%;
+	border:0 #FFF;
+	border-radius:0 30px 30px 30px;
+}
+/* button end */
+/* form start */
+body{
+    background: url('../img/main-bg.jpeg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+section .main{
+    margin: 150px auto;
+    width: 300px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	background-color: transparent;
+	backdrop-filter: blur(15px);
+	border: 2px solid #ffffff80;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 15px 15px 45px 15px #000;
+	box-shadow: 3px 3px 15px 5px #ffffff52;
+}
+section .main h1{
+    font-family: 'Rajdhani';
+    padding: 30px;
+    color: skyblue;
+    font-size: 45px;
+}
+section .main input{
+    border: 0;
+    padding: 10px 8px;
+    margin: 15px 0;
+    width: 80%;
+    border-radius: 5px;
+}
+section .main button{
+    margin:  50px 35%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    transition: 0.5s;
+}
+section .main button:hover{
+    transform: scale(1.5);
+	box-shadow: 1px 1px 10px 3px rgb(38, 129, 164);
+}
+/* form end */

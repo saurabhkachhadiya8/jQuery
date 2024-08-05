@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Buttons</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .box {
+            background-color: lightgray;
+            border: 2px solid #000;
+            color: #000;
+            padding: 20px;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        .edit {
+            background-color: lightblue;
+            border: 2px dashed blue;
+            color: blue;
+            font-size: larger;
+        }
+
+        #reset{
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <button id="reset">Reset</button>
+
+    <button id="add">Add class</button>
+    <button id="remove">Remove class</button>
+    <button id="toggle">Toggle class</button>
+    <button id="fadein">Fade in</button>
+    <button id="fadeout">Fade out</button>
+    <button id="fadetoggle">Fade toggle</button>
+    <button id="slideup">Slide up</button>
+    <button id="slidedown">Slide down</button>
+    <button id="slidetoggle">Slide toggle</button>
+
+    <div class="box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In molestiae modi rem, laboriosam iusto ab eius
+            beatae distinctio molestias et laborum, omnis nam saepe. Obcaecati, sapiente? Culpa expedita quibusdam
+            impedit?
+            Recusandae minima consectetur aperiam laborum eveniet quas consequatur assumenda, aliquid iure officia
+            fugiat atque consequuntur est ad eaque ipsum dolore quod dolorem. Placeat enim animi quis beatae consectetur
+            eum repellendus!
+            Alias eveniet, mollitia in deserunt libero, inventore recusandae ullam sit laboriosam soluta dolorem culpa
+            quia itaque consectetur ipsam nihil. Explicabo quidem autem reiciendis libero magni iure porro modi maiores
+            cumque.
+            Reiciendis aliquid excepturi est. Impedit quod nihil voluptatem ad. Eligendi eos quam dolorum facere
+            mollitia doloremque neque quidem, sunt fugit beatae sequi quae et porro illum rerum! Quae, cupiditate fugit.
+            Commodi in quaerat ratione neque aliquid soluta doloribus fugit, iusto quod numquam expedita fuga quibusdam
+            ad voluptate? Adipisci modi porro libero aspernatur, excepturi officia illo nemo voluptas tenetur qui
+            quibusdam.</p>
+    </div>
+
+
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#add,#remove,#toggle").on('click',function(){
+                $(".box").css({
+                    "transition": "all 1s"
+                })
+            })
+
+
+            $("#add").click(function () {
+                $(".box").addClass("edit");
+            });
+
+            $("#remove").click(function () {
+                $(".box").removeClass("edit");
+            });
+
+            $("#toggle").click(function () {
+                $(".box").toggleClass("edit");
+            });
+
+
+            $("#add").click(function(){
+                $(".box").animate({opacity: 0}, 1000);
+            })
+
+            $("#remove").click(function(){
+                $(".box").animate({opacity: 1}, 10);
+            })
+
+            $("#toggle").click(function(){
+                if($(".box").css("opacity") == "1"){
+                    $(".box").animate({opacity: 0}, 1000);
+                }else{
+                    $(".box").animate({opacity: 1}, 1000);
+                }
+            })
+
+            // Fade
+
+            $("#fadein").click(function () {
+                $(".box").fadeIn();
+            });
+
+            $("#fadeout").click(function () {
+                $(".box").fadeOut();
+            });
+
+            $("#fadetoggle").click(function () {
+                $(".box").fadeToggle();
+            });
+
+            // Slide
+
+            $("#slideup").click(function () {
+                $(".box").slideUp();
+            });
+
+            $("#slidedown").click(function () {
+                $(".box").slideDown();
+            });
+
+            $("#slidetoggle").click(function () {
+                $(".box").slideToggle();
+            });
+
+            // Bind reset function to the click event of the reset button
+            $("#reset").click(function_name);
+        });
+
+        function function_name(){
+            $(".box").removeClass("edit").css({
+                "background-color": "lightgray",
+                "border": "2px solid #000",
+                "color": "#000",
+                "opacity": "1"
+            });
+        }
+    </script>
+
+</body>
+
+</html>
